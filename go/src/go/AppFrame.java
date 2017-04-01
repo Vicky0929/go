@@ -8,6 +8,10 @@ import javax.swing.JFrame;
  *
  */
 public class AppFrame extends JFrame {
+	/**
+	 * 棋盘
+	 */
+	private GoPanel goPanel;
 
 	private static final long serialVersionUID = 1L;
 
@@ -16,11 +20,20 @@ public class AppFrame extends JFrame {
 	 */
 	public AppFrame() {
 
+		ui();
+		setVisible(true);
+		
+	}
+
+	private void ui() {
 		setTitle("五子棋");
-		setSize(500, 500);
+		setSize(506, 528);
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setVisible(true);
+		
+		//添加面板
+		goPanel = new GoPanel();
+		add(goPanel);
 	}
 }
